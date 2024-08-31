@@ -1,4 +1,6 @@
 import React from 'react'
+import Contact from '../data/contact'
+import Card from '../components/card'
 // import Search from '../components/search'
 
 const Home: React.FC = () => {
@@ -18,9 +20,17 @@ const Home: React.FC = () => {
                         <button className='bg-green-500 rounded-lg text-center text-white p-4 mt-5 hover:bg-green-700 transition-colors duration-300'>Reccomend</button>   
                     </div>
                 </div>
-                <footer className='bg-letterboxd-footer absolute bottom-0 h-20 w-full flex flex-col-reverse'>
-                    
+                <footer className='bg-letterboxd-footer absolute bottom-0 h-60 w-full flex flex-col-reverse'>
                     <p className='text-letterboxd-footText text-center text-sm mb-2'>Created By: Ethan Jensen and Brynn Barton</p>
+                    <div className='flex flex-row justify-center'>
+                        {Contact.map((item) => (
+                            <div className='m-4'>
+                                <Card name = {item.name} picture={item.photo} github={item.github} linkedin={item.linkedin}/>
+                            </div>
+                            
+                        ))}
+
+                    </div>
                 </footer>
             </div>
         </>
